@@ -155,7 +155,7 @@ alias tls="tmux ls"
 alias ta="tmux attach"
 
 # vim
-alias v="vim"
+alias v="vim -c VimwikiIndex "
 alias vc="vim ~/.vimrc" 
 
 # git
