@@ -155,3 +155,7 @@ endfun
 
 " Map it to a key
 nnoremap <Leader>J :call <SID>join_spaceless()<CR>
+
+" Vimwiki
+let g:vimwiki_syntax = 'markdown'
+let g:vimwiki_ext = '.md'
