@@ -1,26 +1,26 @@
 # Use powerline
-USE_POWERLINE="true"
+# USE_POWERLINE="true"
 # Source manjaro-zsh-configuration
-if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-  source /usr/share/zsh/manjaro-zsh-config
-fi
+# if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
+#  source /usr/share/zsh/manjaro-zsh-config
+# fi
 # Use manjaro zsh prompt
-if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-  source /usr/share/zsh/manjaro-zsh-prompt
-fi
+# if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
+#  source /usr/share/zsh/manjaro-zsh-prompt
+# fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-# export ZSH="/home/alex/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -118,12 +118,14 @@ plugins=(git z)
 #     builtin cd "$@" && ls -l
 #     }
 
+source $ZSH/oh-my-zsh.sh
+
 # z
 alias z=/home/alex/z/z.sh
 
 # ctrl + p = vim + FZF
 bindkey -s '^p' 'vim $(fzf)^M'
-export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" ' 
+export FZF_DEFAULT_COMMAND='rg --follow --files --hidden -g "!.git" ' 
 
 # bundler
 export BUNDLER_EDITOR="vim"
@@ -155,7 +157,8 @@ alias tls="tmux ls"
 alias ta="tmux attach"
 
 # vim
-alias v="vim -c VimwikiIndex "
+alias v="vim "
+alias vv="vim -c VimwikiIndex"
 alias vc="vim ~/.vimrc" 
 
 # git
