@@ -45,29 +45,39 @@ set number
 
 " Added this to get csv.vim to work
 " filetype plugin on
-
+"
 " Plugins
 call plug#begin()
+"Plug 'junegunn/vim-emoji'
+"Plug 'tbabej/taskwiki'
+"Plug 'tpope/vim-dotenv'
 Plug 'alvan/vim-closetag'
 Plug 'andrewradev/splitjoin.vim'
+Plug 'christoomey/vim-run-interactive'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'eslint/eslint'
-Plug 'jiangmiao/auto-pairs'
+Plug 'jgdavey/tslime.vim'
+"Plug 'jiangmiao/auto-pairs'
+Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'justinmk/vim-sneak'
+Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'mtth/scratch.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier'
 Plug 'rorymckinley/vim-symbols-strings'
 Plug 'shime/vim-livedown'
-Plug 'tbabej/taskwiki'
+Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-dadbod'
+"Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-speeddating'
@@ -114,8 +124,8 @@ map  <Leader>n  :NERDTreeFind<CR>
 
 " ALE
 let g:ale_enabled=0
-let g:ale_linters = {'ruby': ['solargraph'], 'javascript': ['prettier'], 'erb': ['erblint']}
-let g:ale_fixers = {'ruby': ['rubocop'], 'javascript': ['prettier'], 'erb': ['erbint']}
+let g:ale_linters = {'ruby': ['rubocop', 'solargraph'], 'javascript': ['prettier'], 'eruby': ['erblint']}
+let g:ale_fixers = {'ruby': ['rubocop'], 'javascript': ['prettier'], 'eruby': ['erblint']}
 
 " Set the executable for ALE to call to get Solargraph
 " up and running in a given session
@@ -132,7 +142,7 @@ set completeopt=menu,menuone,preview,noselect,noinsert
 set foldmethod=indent
 
 " RSpec
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+let g:rspec_command = 'call Send_to_Tmux("docker-compose exec web bundle exec rspec {spec}\n")'
 
 " vim-rspec mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
@@ -159,3 +169,35 @@ nnoremap <Leader>J :call <SID>join_spaceless()<CR>
 " Vimwiki
 let g:vimwiki_syntax = 'markdown'
 let g:vimwiki_ext = '.md'
+
+" Templates
+autocmd BufNewFile *.html 0r ~/.vim/templates/html.skel
+
+" Scratch
+let g:scratch_filetype = 'ruby'
+let g:scratch_height = 100
+
+" Set 'hidden'
+set hidden
+
+" Edit .vimrc file
+nnoremap <leader>vc :e $HOME/.vimrc<cr>
+
+" Source .vimrc file
+nnoremap <leader>sv :source $HOME/.vimrc<cr>
+
+" PlugInstall
+nnoremap <leader>pi :PlugInstall<cr>
+
+" Edit .zshrc file
+nnoremap <leader>zc :e $HOME/.zshrc<cr>
+
+" vim-run-interactive
+nnoremap <leader>ri :RunInInteractiveShell<space>
+
+" tslime
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+
+" dadbod
+let g:dbs = { 'dev': 'postgres://postgres_db:postgres_db@localhost:5432/eagle_development' }
