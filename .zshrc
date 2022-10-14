@@ -152,6 +152,7 @@ alias tc="vim -n ~/.tmux.conf"
 alias tn="tmux new"
 alias tls="tmux ls"
 alias ta="tmux attach"
+alias st="tmux source-file ~/.tmux.conf"
 
 # vim
 alias v="vim -n "
