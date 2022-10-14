@@ -51,7 +51,7 @@ call plug#begin()
 "Plug 'junegunn/vim-emoji'
 "Plug 'tbabej/taskwiki'
 "Plug 'tpope/vim-dotenv'
-"Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'christoomey/vim-run-interactive'
@@ -207,7 +207,7 @@ let g:dbs = { 'dev': 'postgres://postgres_db:postgres_db@localhost:5432/eagle_de
 hi Folded ctermfg=102 guifg=#878787 guibg=NONE ctermbg=NONE
 
 " fugitive git bindings
-nnoremap <space>g :Git <CR>
+nnoremap <space>G :Git <CR>
 " nnoremap <space>ga :Git add %:p<CR><CR>
 " nnoremap <space>gs :Gstatus<CR>
 " nnoremap <space>gc :Gcommit -v -q<CR>
@@ -224,6 +224,12 @@ nnoremap <space>g :Git <CR>
 " nnoremap <space>gps :Dispatch! git push<CR>
 " nnoremap <space>gpl :Dispatch! git pull<CR>
 
+let g:gitgutter_override_sign_column_highlight = 0
 highlight clear SignColumn
 highlight ALEError ctermbg=none cterm=underline 
 highlight ALEWarning ctermbg=none cterm=underline
+
+highlight GitGutterAdd ctermfg=2
+highlight GitGutterChange ctermfg=3
+highlight GitGutterDelete ctermfg=1
+highlight GitGutterChangeDelete ctermfg=4
