@@ -1,19 +1,12 @@
-# Use powerline
-# USE_POWERLINE="true"
-# Source manjaro-zsh-configuration
-# if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-#  source /usr/share/zsh/manjaro-zsh-config
-# fi
-# Use manjaro zsh prompt
-# if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-#  source /usr/share/zsh/manjaro-zsh-prompt
-# fi
+# zsh
+alias zc="vim ~/.zshrc"
+alias sc="source ~/.zshrc"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -80,9 +73,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-z)
+plugins=(git z)
 
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -93,7 +86,6 @@ plugins=(git zsh-z)
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -118,11 +110,11 @@ plugins=(git zsh-z)
 #     builtin cd "$@" && ls -l
 #     }
 
-source $ZSH/oh-my-zsh.sh
-
 # ctrl + p = vim + FZF
-bindkey -s '^p' 'vim -n $(fzf)^M'
-export FZF_DEFAULT_COMMAND='rg --follow --files --hidden -g "!.git" ' 
+bindkey -s '^p' 'vim $(fzf)^M'
+export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" ' 
+
+export EDITOR='vim'
 
 # bundler
 export BUNDLER_EDITOR="vim"
@@ -135,10 +127,6 @@ export PATH=/usr/bin:$PATH
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-# zsh
-alias zc="vim -n ~/.zshrc"
-alias sc="source ~/.zshrc"
-
 # alias za="vim ~/.oh-my-zsh/custom/aliases.zsh" 
 # alias sa="source ~/.oh-my-zsh/custom/aliases.zsh"
 
@@ -148,16 +136,16 @@ alias la="ls -a"
 alias lla="ls -la"
 
 # tmux
-alias tc="vim -n ~/.tmux.conf"
+alias tc="vim ~/.tmux.conf"
 alias tn="tmux new"
 alias tls="tmux ls"
 alias ta="tmux attach"
-alias st="tmux source-file ~/.tmux.conf"
+alias st="tmux source ~/.tmux.conf"
 
 # vim
-alias v="vim -n "
-alias vv="vim -c VimwikiIndex"
-alias vc="vim -n ~/.vimrc" 
+alias v="vim "
+alias w="vim -c VimwikiIndex"
+alias vc="vim ~/.vimrc" 
 
 # git
 alias gs="git status"
@@ -183,6 +171,7 @@ alias gcmp="git checkout master && git pull"
 alias gfo="git fetch origin"
 alias gsu="git stash -u"
 alias gsp="git stash pop"
+alias gf="git diff --name-only master"
 
 # github
 alias ghrv="gh run view"
@@ -197,72 +186,44 @@ alias rt="ruby *_test.rb"
 
 # bundle
 alias bi="bundle install"
-alias be="bundle exec"
-alias berdm="bundle exec rails db:migrate"
-alias berdr="bundle exec rails db:rollback"
-alias ber="bundle exec rspec"
+alias b="bundle exec"
+alias brdm="bundle exec rails db:migrate"
+alias brdr="bundle exec rails db:rollback"
+alias br="bundle exec rspec"
 alias biw="bundle config --local disable_platform_warnings true"
-alias bejs="bundle exec jekyll serve --watch"
+alias bjs="bundle exec jekyll serve --watch"
 alias sdw="export RUBYOPT=-W1"
-alias begc="bundle exec guard -c"
+alias bgc="bundle exec guard -c"
 
 # postgres
 alias pg="sudo -u postgres psql"
 
 # veracrypt 
-alias dc="veracrypt $HOME/crypt $HOME/private"
-alias ec="veracrypt -d $HOME/private"
+# alias dc="veracrypt $HOME/crypt $HOME/private"
+# alias ec="veracrypt -d $HOME/private"
 
 # redshift
-alias rs="redshift -t 2900:2900 > /dev/null 2>/dev/null &"
+# alias rs="redshift -t 2900:2900 > /dev/null 2>/dev/null &"
 
 # ghostwriter
-alias gw="ghostwriter > /dev/null 2>/dev/null &"
+# alias gw="ghostwriter > /dev/null 2>/dev/null &"
 
 # rails
 alias rrc="vim $HOME/.railsrc"
+alias rc="rails console"
 alias rcs="rails console --sandbox"
-alias rdbm="rails db:migrate"
-alias rdbr="rails db:rollback"
+alias rdm="rails db:migrate"
+alias rdr="rails db:rollback"
 
 # docker
 alias dsa="docker ps -q | xargs -r docker stop"
 alias dps="docker ps"
 alias wdps="watch docker ps"
 
-# eagle
-_docker_compose_attach () {
-  local container_id=$(docker-compose ps -q $1)
-  docker attach $container_id
-}
-alias dca="_docker_compose_attach"
-
-alias dps="docker ps | less -S"
-alias dcps="docker-compose ps"
-alias dcb="docker-compose build"
-alias dcu="docker-compose up -d && docker-compose logs -f --tail=0 web"
-alias dcd="docker-compose down"
-alias dcr="docker-compose restart"
-alias dcrw="docker-compose restart web && docker-compose logs -f --tail=0 web"
-alias dcp="docker attach eagle-dev-local-web-1"
-alias dcm="docker-compose run --rm web bundle exec rake db:migrate"
-alias dcc="docker-compose run --rm web rails c"
-alias dcs="clear && docker-compose run --rm web bundle exec rspec"
-alias dcsf="docker-compose run --rm web bundle exec rspec --fail-fast"
-alias dcsr="docker-compose run --rm web bundle exec rescue rspec"
-alias dce="docker-compose run --rm"
-alias dcew="docker-compose run --rm web"
-alias dcl="docker-compose logs -f --tail=100"
-alias dclw="docker-compose logs -f --tail=100 web"
-alias dclw0="docker-compose logs -f --tail=0 web"
-alias dcls0="docker-compose logs -f --tail=0 web"
-
-# swap caps lock and ctrl
-# xmodmap /home/alex/.Xmodmap
-
 # white noise generator
 alias sn="sox-noise > /dev/null 2>/dev/null &"
 
+# gogh
 alias gogh="$HOME/Scripts/gogh.sh"
 
 # disable autocorrect
@@ -275,14 +236,69 @@ unsetopt correct
 # fi
 
 # add ruby dir to $PATH
-# export PATH="/home/alex/.local/share/gem/ruby/3.0.0/bin:$PATH"
+# export PATH="${HOME}/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 # rbenv
-# export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # guake
-alias light="guake --change-palette 'Mar'"
-alias dark="guake --change-palette 'Nord'"
+# alias light="guake --change-palette 'Mar'"
+# alias dark="guake --change-palette 'Nord'"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias eagle="cd ~/Repos/eagle-dev-local/eagle"
+# eagle
+alias dcd="docker-compose down"
+alias dcb="docker-compose build"
+alias dcs="docker-compose stop"
+alias dcu="docker-compose up -d && docker-compose logs -f --tail=100 web"
+alias dcr="docker-compose restart"
+alias drw="docker-compose restart web"
+alias dcl="docker-compose logs -f --tail=100 "
+alias dclw="docker-compose logs -f --tail=100 web"
+alias dcl0="docker-compose logs -f --tail=0 "
+alias dcl0w="docker-compose logs -f --tail=0 web"
+alias dct="docker-compose exec web bundle exec rspec"
+alias dcf="docker-compose exec web bundle exec rspec --fail-fast"
+alias dcc="docker-compose exec web rails console"
+alias dce="docker-compose exec"
+alias dcew="docker-compose exec web"
+alias dcp="docker attach eagle-dev-local_web_1"
+alias dcpw="docker attach eagle-dev-local_workers_1"
+
+# apt
+alias i="sudo apt install -y"
+alias s="apt search"
+alias u="sudo apt update"
+
+# .clear
+alias .clear=clear
+
+# scratchpad
+alias vs="vim -c 'Scratch'"
+
+# copy last command
+alias clc="fc -ln -1 | tr -d '\n' | xclip -sel c"
+
+# Clear ~/.vim/view/
+alias rmv="rm -rf ~/.vim/view/"
+
+# Remove all .sw* files in directory
+alias rsw="find . -type f -name '*.sw[klmnop]' -delete"
+
+# nnn
+alias n=nnn
+
+# alacritty
+alias ac="vim ~/.config/alacritty/alacritty.yml"
+alias light="alacritty-themes Mocha.light"
+alias dark="alacritty-themes Mocha.dark"
+
+# vim-anywhere
+# export PATH="$HOME/.vim-anywhere/bin/run:$PATH"
+
+# restart network-manager
+alias rnm="sudo systemctl restart network-manager"
+
+# kill gnome shell
+alias kgs=sudo killall -3 gnome-shell
