@@ -80,7 +80,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z)
+plugins=(git zsh-z)
 
 # source $ZSH/oh-my-zsh.sh
 
@@ -119,9 +119,6 @@ plugins=(git z)
 #     }
 
 source $ZSH/oh-my-zsh.sh
-
-# z
-alias z=/home/alex/z/z.sh
 
 # ctrl + p = vim + FZF
 bindkey -s '^p' 'vim $(fzf)^M'

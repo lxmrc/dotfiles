@@ -201,3 +201,6 @@ let g:tslime_always_current_window = 1
 
 " dadbod
 let g:dbs = { 'dev': 'postgres://postgres_db:postgres_db@localhost:5432/eagle_development' }
+
+" highlight
+hi Folded ctermfg=102 guifg=#878787 guibg=NONE ctermbg=NONE
