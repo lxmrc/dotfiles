@@ -121,7 +121,7 @@ plugins=(git zsh-z)
 source $ZSH/oh-my-zsh.sh
 
 # ctrl + p = vim + FZF
-bindkey -s '^p' 'vim $(fzf)^M'
+bindkey -s '^p' 'vim -n $(fzf)^M'
 export FZF_DEFAULT_COMMAND='rg --follow --files --hidden -g "!.git" ' 
 
 # bundler
@@ -136,7 +136,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # zsh
-alias zc="vim ~/.zshrc"
+alias zc="vim -n ~/.zshrc"
 alias sc="source ~/.zshrc"
 
 # alias za="vim ~/.oh-my-zsh/custom/aliases.zsh" 
@@ -148,15 +148,15 @@ alias la="ls -a"
 alias lla="ls -la"
 
 # tmux
-alias tc="vim ~/.tmux.conf"
+alias tc="vim -n ~/.tmux.conf"
 alias tn="tmux new"
 alias tls="tmux ls"
 alias ta="tmux attach"
 
 # vim
-alias v="vim "
+alias v="vim -n "
 alias vv="vim -c VimwikiIndex"
-alias vc="vim ~/.vimrc" 
+alias vc="vim -n ~/.vimrc" 
 
 # git
 alias gs="git status"

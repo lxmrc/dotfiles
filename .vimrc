@@ -51,6 +51,7 @@ call plug#begin()
 "Plug 'junegunn/vim-emoji'
 "Plug 'tbabej/taskwiki'
 "Plug 'tpope/vim-dotenv'
+"Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'christoomey/vim-run-interactive'
