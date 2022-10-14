@@ -78,7 +78,7 @@ Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dadbod'
-"Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-speeddating'
@@ -124,7 +124,7 @@ let NERDTreeQuitOnOpen=1
 map  <Leader>n  :NERDTreeFind<CR>
 
 " ALE
-let g:ale_enabled=0
+let g:ale_enabled=1
 let g:ale_linters = {'ruby': ['rubocop', 'solargraph'], 'javascript': ['prettier'], 'eruby': ['erblint']}
 let g:ale_fixers = {'ruby': ['rubocop'], 'javascript': ['prettier'], 'eruby': ['erblint']}
 
@@ -223,3 +223,7 @@ nnoremap <space>g :Git <CR>
 " nnoremap <space>go :Git checkout<Space>
 " nnoremap <space>gps :Dispatch! git push<CR>
 " nnoremap <space>gpl :Dispatch! git pull<CR>
+
+highlight clear SignColumn
+highlight ALEError ctermbg=none cterm=underline 
+highlight ALEWarning ctermbg=none cterm=underline
