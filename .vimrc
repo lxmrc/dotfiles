@@ -168,8 +168,7 @@ endfun
 nnoremap <Leader>J :call <SID>join_spaceless()<CR>
 
 " Vimwiki
-let g:vimwiki_syntax = 'markdown'
-let g:vimwiki_ext = '.md'
+let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.wiki'}]
 
 " Templates
 autocmd BufNewFile *.html 0r $HOME/.vim/templates/html.skel

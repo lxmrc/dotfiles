@@ -143,9 +143,9 @@ alias ta="tmux attach"
 alias st="tmux source ~/.tmux.conf"
 
 # vim
-alias v="vim "
-alias w="vim -c VimwikiIndex"
-alias vc="vim ~/.vimrc" 
+alias v="vim -n "
+alias w="vim -nc VimwikiIndex"
+alias vc="vim -n ~/.vimrc" 
 
 # git
 alias gs="git status"
@@ -209,7 +209,7 @@ alias pg="sudo -u postgres psql"
 # alias gw="ghostwriter > /dev/null 2>/dev/null &"
 
 # rails
-alias rrc="vim $HOME/.railsrc"
+alias rrc="vim -n $HOME/.railsrc"
 alias rc="rails console"
 alias rcs="rails console --sandbox"
 alias rdm="rails db:migrate"
@@ -267,9 +267,13 @@ alias dcp="docker attach eagle-dev-local_web_1"
 alias dcpw="docker attach eagle-dev-local_workers_1"
 
 # apt
-alias i="sudo apt install -y"
-alias s="apt search"
-alias u="sudo apt update"
+alias ai="sudo apt install -y"
+alias as="apt search"
+alias au="sudo apt update"
+alias aid="sudo apt -f install -y"
+
+# dpkg
+alias di="sudo dpkg -i "
 
 # .clear
 alias .clear=clear
@@ -290,7 +294,7 @@ alias rsw="find . -type f -name '*.sw[klmnop]' -delete"
 alias n=nnn
 
 # alacritty
-alias ac="vim ~/.config/alacritty/alacritty.yml"
+alias ac="vim -n ~/.config/alacritty/alacritty.yml"
 alias light="alacritty-themes Mocha.light"
 alias dark="alacritty-themes Mocha.dark"
 alias at="alacritty-themes"
@@ -303,3 +307,9 @@ alias rnm="sudo systemctl restart network-manager"
 
 # kill gnome shell
 alias kgs="sudo killall -3 gnome-shell"
+
+# go
+# export PATH=$PATH:/usr/local/go/bin
+
+# sync dot files
+alias sdf="git -C ${HOME}/code/dotfiles add . && git -C ${HOME}/code/dotfiles commit -m 'Update dotfiles' && git -C ${HOME}/code/dotfiles push"
