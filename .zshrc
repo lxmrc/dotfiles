@@ -293,6 +293,7 @@ alias n=nnn
 alias ac="vim ~/.config/alacritty/alacritty.yml"
 alias light="alacritty-themes Mocha.light"
 alias dark="alacritty-themes Mocha.dark"
+alias at="alacritty-themes"
 
 # vim-anywhere
 # export PATH="$HOME/.vim-anywhere/bin/run:$PATH"
@@ -301,4 +302,4 @@ alias dark="alacritty-themes Mocha.dark"
 alias rnm="sudo systemctl restart network-manager"
 
 # kill gnome shell
-alias kgs=sudo killall -3 gnome-shell
+alias kgs="sudo killall -3 gnome-shell"
