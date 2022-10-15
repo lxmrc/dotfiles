@@ -147,7 +147,7 @@ let g:rspec_command = 'call Send_to_Tmux("docker-compose exec web bundle exec rs
 
 " vim-rspec mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>n :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
@@ -172,7 +172,7 @@ let g:vimwiki_syntax = 'markdown'
 let g:vimwiki_ext = '.md'
 
 " Templates
-autocmd BufNewFile *.html 0r ~/.vim/templates/html.skel
+autocmd BufNewFile *.html 0r $HOME/.vim/templates/html.skel
 
 " Scratch
 let g:scratch_filetype = 'ruby'
@@ -184,14 +184,20 @@ set hidden
 " Edit .vimrc file
 nnoremap <leader>vc :e $HOME/.vimrc<cr>
 
-" Source .vimrc file
+" Source .vimrc
 nnoremap <leader>sv :source $HOME/.vimrc<cr>
 
 " PlugInstall
 nnoremap <leader>pi :PlugInstall<cr>
 
-" Edit .zshrc file
+" Edit .zshrc
 nnoremap <leader>zc :e $HOME/.zshrc<cr>
+
+" Edit .tmux.conf
+nnoremap <leader>tc :e $HOME/.tmux.conf<cr>
+
+" Source .tmux.conf
+nnoremap <space>st :!tmux source $HOME/.tmux.conf<CR>
 
 " vim-run-interactive
 nnoremap <leader>ri :RunInInteractiveShell<space>
