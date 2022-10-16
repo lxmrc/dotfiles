@@ -54,10 +54,12 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'andrewradev/splitjoin.vim'
+Plug 'chrisbra/colorizer'
 Plug 'christoomey/vim-run-interactive'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'eslint/eslint'
+"Plug 'jceb/vim-orgmode'
 Plug 'jgdavey/tslime.vim'
 "Plug 'jiangmiao/auto-pairs'
 Plug 'jreybert/vimagit'
@@ -68,6 +70,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
 Plug 'mtth/scratch.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
@@ -169,6 +172,8 @@ nnoremap <Leader>J :call <SID>join_spaceless()<CR>
 
 " Vimwiki
 let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.wiki'}]
+" let g:wiki.nested_syntaxes = {'ruby': 'ruby'}
+let g:vimwiki_hl_headers = 1
 
 " Templates
 autocmd BufNewFile *.html 0r $HOME/.vim/templates/html.skel

@@ -146,6 +146,8 @@ alias st="tmux source ~/.tmux.conf"
 alias v="vim -n "
 alias w="vim -nc VimwikiIndex"
 alias vc="vim -n ~/.vimrc" 
+alias vg="vim -c Git" 
+alias vs="vim -c 'Scratch'"
 
 # git
 alias gs="git status"
@@ -277,9 +279,6 @@ alias di="sudo dpkg -i "
 
 # .clear
 alias .clear=clear
-
-# scratchpad
-alias vs="vim -c 'Scratch'"
 
 # copy last command
 alias clc="fc -ln -1 | tr -d '\n' | xclip -sel c"
