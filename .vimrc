@@ -30,7 +30,7 @@ nnoremap 0 ^
 nnoremap ^ 0
 
 " Ctrl+P FZF
-nmap <C-p> :GFiles<ENTER>
+nmap <C-p> :Files<ENTER>
 nmap <C-g> :Rg 
 
 " Fix moving along wrapped lines
@@ -190,7 +190,7 @@ set hidden
 nnoremap <leader>vc :e $HOME/.vimrc<cr>
 
 " Source .vimrc and run PlugInstall
-nnoremap <leader>sv :source $HOME/.vimrc | PlugInstall<cr>
+nnoremap <leader>sv :source $HOME/.vimrc<cr>
 
 " PlugInstall
 nnoremap <leader>pi :PlugInstall<cr>
@@ -248,3 +248,5 @@ highlight GitGutterChangeDelete ctermfg=4
 nnoremap <space>a :ALEFix <CR>
 
 nmap <F8> :TagbarToggle<CR>
+
+let g:rooter_manual_only = 1
