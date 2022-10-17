@@ -217,7 +217,7 @@ let g:dbs = { 'dev': 'postgres://postgres_db:postgres_db@localhost:5432/eagle_de
 hi Folded ctermfg=102 guifg=#878787 guibg=NONE ctermbg=NONE
 
 " fugitive git bindings
-nnoremap <space>G :Git <CR>
+nnoremap <space>G :Gedit : <CR>
 " nnoremap <space>ga :Git add %:p<CR><CR>
 " nnoremap <space>gc :Gcommit -v -q<CR>
 " nnoremap <space>gt :Gcommit -v -q %:p<CR>
@@ -228,9 +228,10 @@ nnoremap <space>G :Git <CR>
 " nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
 " nnoremap <space>gp :Ggrep<Space>
 " nnoremap <space>gm :Gmove<Space>
+nnoremap <space>gw :Git blame<Space>
 nnoremap <space>gb :Git branch<Space>
-nnoremap <space>go :Git checkout<Space>
-nnoremap <space>gps :Dispatch! git push<CR>
+" nnoremap <space>go :Git checkout<Space>
+" nnoremap <space>gps :Dispatch! git push<CR>
 " nnoremap <space>gpl :Dispatch! git pull<CR>
 
 let g:gitgutter_override_sign_column_highlight = 0
@@ -244,3 +245,5 @@ highlight GitGutterDelete ctermfg=1
 highlight GitGutterChangeDelete ctermfg=4
 
 nnoremap <space>a :ALEFix <CR>
+
+nmap <F8> :TagbarToggle<CR>
