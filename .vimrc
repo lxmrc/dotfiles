@@ -30,7 +30,7 @@ nnoremap 0 ^
 nnoremap ^ 0
 
 " Ctrl+P FZF
-nmap <C-p> :Files<ENTER>
+nmap <C-p> :GFiles<ENTER>
 nmap <C-g> :Rg 
 
 " Fix moving along wrapped lines
@@ -52,6 +52,7 @@ call plug#begin()
 "Plug 'tbabej/taskwiki'
 "Plug 'tpope/vim-dotenv'
 Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
 Plug 'alvan/vim-closetag'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'chrisbra/colorizer'
@@ -188,8 +189,8 @@ set hidden
 " Edit .vimrc file
 nnoremap <leader>vc :e $HOME/.vimrc<cr>
 
-" Source .vimrc
-nnoremap <leader>sv :source $HOME/.vimrc<cr>
+" Source .vimrc and run PlugInstall
+nnoremap <leader>sv :source $HOME/.vimrc | PlugInstall<cr>
 
 " PlugInstall
 nnoremap <leader>pi :PlugInstall<cr>
