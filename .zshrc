@@ -111,7 +111,7 @@ source $ZSH/oh-my-zsh.sh
 #     }
 
 # ctrl + p = vim + FZF
-bindkey -s '^p' 'vim $(fzf)^M'
+bindkey -s '^p' 'vim -n $(fzf)^M'
 export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" ' 
 
 export EDITOR='vim'
@@ -146,7 +146,7 @@ alias st="tmux source ~/.tmux.conf"
 alias v="vim -n "
 alias w="vim -nc VimwikiIndex"
 alias vc="vim -n ~/.vimrc" 
-alias vg="vim -c Git" 
+alias vg="vim -c 'Gedit :'" 
 alias vs="vim -c 'Scratch'"
 
 # git

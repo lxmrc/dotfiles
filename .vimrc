@@ -71,19 +71,20 @@ Plug 'junegunn/limelight.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 Plug 'mtth/scratch.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier'
 Plug 'rorymckinley/vim-symbols-strings'
-Plug 'shime/vim-livedown'
+"Plug 'shime/vim-livedown'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
@@ -129,7 +130,7 @@ map  <Leader>n  :NERDTreeFind<CR>
 
 " ALE
 let g:ale_enabled=1
-let g:ale_linters = {'ruby': ['rubocop', 'solargraph'], 'javascript': ['prettier'], 'eruby': ['erblint']}
+let g:ale_linters = {'ruby': ['rubocop'], 'javascript': ['prettier'], 'eruby': ['erblint']}
 let g:ale_fixers = {'ruby': ['rubocop'], 'javascript': ['prettier'], 'eruby': ['erblint']}
 
 " Set the executable for ALE to call to get Solargraph
@@ -250,3 +251,5 @@ nnoremap <space>a :ALEFix <CR>
 nmap <F8> :TagbarToggle<CR>
 
 let g:rooter_manual_only = 0
+
+let g:projectionist_heuristics = { "app/*.rb": {"alternate": "spec/{}_spec.rb"}, "spec/*_spec.rb": {"alternate": "app/{}.rb"} }
