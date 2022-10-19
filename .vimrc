@@ -69,9 +69,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'justinmk/vim-sneak'
-Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'ludovicchabant/vim-gutentags'
-"Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 Plug 'mtth/scratch.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
@@ -81,7 +80,7 @@ Plug 'rorymckinley/vim-symbols-strings'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dadbod'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
@@ -92,6 +91,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/restore_view.vim'
+"Plug 'vim-denops/denops.vim'
+"Plug 'vim-denops/denops-helloworld.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
 call plug#end()
@@ -232,9 +233,10 @@ nnoremap <space>G :Gedit : <CR>
 " nnoremap <space>gm :Gmove<Space>
 nnoremap <space>gw :Git blame<Space>
 nnoremap <space>gb :Git branch<Space>
-" nnoremap <space>go :Git checkout<Space>
-" nnoremap <space>gps :Dispatch! git push<CR>
-" nnoremap <space>gpl :Dispatch! git pull<CR>
+nnoremap <space>go :Git checkout<Space>
+nnoremap <space>gdm :Git diff --name-only master<CR>
+nnoremap <space>gps :Dispatch! git push<CR>
+nnoremap <space>gpl :Dispatch! git pull<CR>
 
 let g:gitgutter_override_sign_column_highlight = 0
 highlight clear SignColumn

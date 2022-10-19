@@ -144,7 +144,8 @@ alias st="tmux source ~/.tmux.conf"
 
 # vim
 alias v="vim -n "
-alias w="vim -nc VimwikiIndex"
+alias vw="vim -nc VimwikiIndex"
+alias vwd="vim -nc VimwikiDiaryIndex"
 alias vc="vim -n ~/.vimrc" 
 alias vg="vim -c 'Gedit :'" 
 alias vs="vim -c 'Scratch'"
@@ -265,8 +266,8 @@ alias dcf="docker-compose exec web bundle exec rspec --fail-fast"
 alias dcc="docker-compose exec web rails console"
 alias dce="docker-compose exec"
 alias dcew="docker-compose exec web"
-alias dcp="docker attach eagle-dev-local_web_1"
-alias dcpw="docker attach eagle-dev-local_workers_1"
+alias dcp="docker attach eagle-dev-local-web-1"
+alias dcpw="docker attach eagle-dev-local-workers-1"
 
 # apt
 alias ai="sudo apt install -y"
@@ -293,7 +294,7 @@ alias rsw="find . -type f -name '*.sw[klmnop]' -delete"
 alias n=nnn
 
 # alacritty
-alias ac="vim -n ~/.config/alacritty/alacritty.yml"
+alias ac="vim -n ~/.alacritty.yml"
 alias light="alacritty-themes Mocha.light"
 alias dark="alacritty-themes Mocha.dark"
 alias at="alacritty-themes"
@@ -312,3 +313,8 @@ alias kgs="sudo killall -3 gnome-shell"
 
 # sync dot files
 alias sdf="git -C ${HOME}/code/dotfiles add . && git -C ${HOME}/code/dotfiles commit -m 'Update dotfiles' && git -C ${HOME}/code/dotfiles push"
+
+export DENO_INSTALL="/home/alex/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+alias rgl="rg -l"
