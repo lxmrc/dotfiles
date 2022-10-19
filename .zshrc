@@ -1,6 +1,6 @@
 # zsh
-alias zc="vim ~/.zshrc"
-alias sc="source ~/.zshrc"
+alias zc="vim ${HOME}/.zshrc"
+alias sc="source ${HOME}/.zshrc"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -99,10 +99,10 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# alias zshconfig="mate ${HOME}/.zshrc"
+# alias ohmyzsh="mate ${HOME}/.oh-my-zsh"
 
-# add ~/bin to path
+# add ${HOME}/bin to path
 # export PATH="$HOME/bin:$PATH"
 
 # ls when I cd
@@ -127,8 +127,8 @@ export PATH=/usr/bin:$PATH
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-# alias za="vim ~/.oh-my-zsh/custom/aliases.zsh" 
-# alias sa="source ~/.oh-my-zsh/custom/aliases.zsh"
+# alias za="vim ${HOME}/.oh-my-zsh/custom/aliases.zsh" 
+# alias sa="source ${HOME}/.oh-my-zsh/custom/aliases.zsh"
 
 # ls
 alias ll="ls -l"
@@ -136,17 +136,17 @@ alias la="ls -a"
 alias lla="ls -la"
 
 # tmux
-alias tc="vim ~/.tmux.conf"
+alias tc="vim ${HOME}/.tmux.conf"
 alias tn="tmux new"
 alias tls="tmux ls"
 alias ta="tmux attach"
-alias st="tmux source ~/.tmux.conf"
+alias st="tmux source ${HOME}/.tmux.conf"
 
 # vim
 alias v="vim -n "
 alias vw="vim -nc VimwikiIndex"
 alias vwd="vim -nc VimwikiDiaryIndex"
-alias vc="vim -n ~/.vimrc" 
+alias vc="vim -n ${HOME}/.vimrc" 
 alias vg="vim -c 'Gedit :'" 
 alias vs="vim -c 'Scratch'"
 
@@ -285,7 +285,7 @@ alias .clear=clear
 alias clc="fc -ln -1 | tr -d '\n' | xclip -sel c"
 
 # Clear ~/.vim/view/
-alias rmv="rm -rf ~/.vim/view/"
+alias rmv="rm -rf ${HOME}/.vim/view/"
 
 # Remove all .sw* files in directory
 alias rsw="find . -type f -name '*.sw[klmnop]' -delete"
@@ -294,7 +294,7 @@ alias rsw="find . -type f -name '*.sw[klmnop]' -delete"
 alias n=nnn
 
 # alacritty
-alias ac="vim -n ~/.alacritty.yml"
+alias ac="vim -n ${HOME}/.alacritty.yml"
 alias light="alacritty-themes Mocha.light"
 alias dark="alacritty-themes Mocha.dark"
 alias at="alacritty-themes"
@@ -318,3 +318,5 @@ export DENO_INSTALL="/home/alex/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 alias rgl="rg -l"
+
+alias gc="vim -n ${HOME}/.gitconfig"
