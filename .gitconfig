@@ -14,3 +14,5 @@
 	default = current
 [alias]
   fetch-checkout = !sh -c 'git fetch origin $1 && git checkout $1' -
+[github]
+	user = lxmrc
