@@ -49,7 +49,7 @@ set number
 " Plugins
 call plug#begin()
 "Plug 'junegunn/vim-emoji'
-"Plug 'tbabej/taskwiki'
+Plug 'tbabej/taskwiki'
 "Plug 'tpope/vim-dotenv'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
@@ -231,12 +231,14 @@ nnoremap <space>G :Gedit : <CR>
 " nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
 " nnoremap <space>gp :Ggrep<Space>
 " nnoremap <space>gm :Gmove<Space>
-nnoremap <space>gw :Git blame<Space>
-nnoremap <space>gb :Git branch<Space>
+nnoremap <space>gw :Git blame<CR>
+nnoremap <space>gb :Git branch<CR>
 nnoremap <space>go :Git checkout<Space>
+nnoremap <space>gf :Git fetch-checkout<Space>
 nnoremap <space>gdm :Git diff --name-only master<CR>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
+nnoremap <space>gl :Gclog<CR>
 
 let g:gitgutter_override_sign_column_highlight = 0
 highlight clear SignColumn
