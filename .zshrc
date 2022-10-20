@@ -114,6 +114,8 @@ source $ZSH/oh-my-zsh.sh
 bindkey -s '^p' 'vim -n $(fzf)^M'
 export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" ' 
 
+bindkey -s '^f' 'feh $(fzf)^M'
+
 export EDITOR='vim'
 
 # bundler

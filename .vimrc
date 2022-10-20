@@ -238,8 +238,8 @@ nnoremap <space>gmm :Git merge master<CR>
 nnoremap <space>gb :Git branch \| only<CR>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gf :Git fetch-checkout<Space>
-nnoremap <space>gdm :Git diff --name-only master<CR>
-nnoremap <space>gd :Git diff master \| only<CR>
+nnoremap <space>gdn :Git diff --name-only master \| only<CR>
+nnoremap <space>gdm :Git diff master \| only<CR>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
 nnoremap <space>gl :G log \| only<CR>
