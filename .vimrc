@@ -235,8 +235,9 @@ nnoremap <space>G :Gedit : <CR>
 " nnoremap <space>gm :Gmove<Space>
 nnoremap <space>gw :Git blame<CR>
 nnoremap <space>gmm :Git merge master<CR>
+nnoremap <space>gcm :Git checkout master<CR>
 nnoremap <space>gb :Git branch -a \| only<CR>
-nnoremap <space>go :Git checkout<Space>
+nnoremap <space>gc :Git checkout<Space>
 nnoremap <space>gf :Git fetch-checkout<Space>
 nnoremap <space>gdn :Git diff --name-only master \| only<CR>
 nnoremap <space>gdm :Git diff master \| only<CR>

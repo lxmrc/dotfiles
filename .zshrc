@@ -322,7 +322,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 
 alias rgl="rg -l"
 
-alias gc="vim -n ${HOME}/.gitconfig"
+alias gcg="vim -n ${HOME}/.gitconfig"
 
 alias wpr="gh pr list --state merged --search "
 alias mpr="gh pr list --state merged"
