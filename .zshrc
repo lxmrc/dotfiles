@@ -1,5 +1,5 @@
 # zsh
-alias zc="vim ${HOME}/.zshrc"
+alias zc="vim -n ${HOME}/.zshrc"
 alias sc="source ${HOME}/.zshrc"
 
 # If you come from bash you might have to change your $PATH.
@@ -325,3 +325,14 @@ alias rgl="rg -l"
 alias gc="vim -n ${HOME}/.gitconfig"
 
 alias wpr="gh pr list --state merged --search "
+alias mpr="gh pr list --state merged"
+
+function erb_lint()
+{
+  rbenv shell 3.1.1
+  erblint -a $1
+  rbenv shell $(rbenv local)
+  return 0
+}
+
+alias el="erb_lint"
