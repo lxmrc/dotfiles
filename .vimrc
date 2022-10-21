@@ -70,7 +70,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 Plug 'mattn/vim-gist'
 Plug 'mattn/webapi-vim'
 Plug 'mtth/scratch.vim'
@@ -243,6 +243,7 @@ nnoremap <space>gdm :Git diff master \| only<CR>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
 nnoremap <space>gl :G log \| only<CR>
+nnoremap <space>gbn :Git checkout -b<Space>
 
 let g:gitgutter_override_sign_column_highlight = 0
 highlight clear SignColumn
