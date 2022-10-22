@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ${HOME}/.oh-my-zsh"
 
 # add ${HOME}/bin to path
-# export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # ls when I cd
 # function cd {
@@ -146,7 +146,7 @@ alias st="tmux source ${HOME}/.tmux.conf"
 
 # vim
 alias v="vim -n "
-alias vw="vim -nc VimwikiIndex"
+alias vw="vim -nc 'Goyo | VimwikiIndex'"
 alias vwd="vim -nc VimwikiDiaryIndex"
 alias vc="vim -n ${HOME}/.vimrc" 
 alias vg="vim -c 'Gedit :'" 
@@ -296,10 +296,14 @@ alias rsw="find . -type f -name '*.sw[klmnop]' -delete"
 # nnn
 alias n=nnn
 
+# tmux-resurrect
+alias trs="$HOME/bin/tmux-resurrect/scripts/save.sh"
+alias trr="$HOME/bin/tmux-resurrect/scripts/restore.sh"
+
 # alacritty
 alias ac="vim -n ${HOME}/.alacritty.yml"
-alias light="alacritty-themes Mocha.light"
-alias dark="alacritty-themes Mocha.dark"
+alias light="alacritty-themes Default.light; echo light > $HOME/.theme; tmux source-file \"${HOME}/code/tmux-powerline-light/green-light.tmuxtheme\""
+alias dark="alacritty-themes Monokai.dark; echo dark > $HOME/.theme; tmux source-file \"${HOME}/code/tmux-powerline-light/green-dark.tmuxtheme\""
 alias at="alacritty-themes"
 
 # vim-anywhere
@@ -336,3 +340,13 @@ function erb_lint()
 }
 
 alias el="erb_lint"
+
+export THEME=$(cat $HOME/.theme)
+
+if [ "$THEME" = "light" ]
+then
+  tmux source-file "${HOME}/code/tmux-powerline-light/green-light.tmuxtheme"
+elif [ "$THEME" = "dark" ]
+then
+  tmux source-file "${HOME}/code/tmux-powerline-light/green-dark.tmuxtheme"
+fi

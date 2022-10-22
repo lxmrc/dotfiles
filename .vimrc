@@ -77,6 +77,7 @@ Plug 'mtth/scratch.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier'
+Plug 'rkitover/vimpager'
 Plug 'rorymckinley/vim-symbols-strings'
 "Plug 'shime/vim-livedown'
 Plug 'thoughtbot/vim-rspec'
@@ -263,3 +264,26 @@ nmap <F8> :TagbarToggle<CR>
 let g:rooter_manual_only = 0
 
 let g:projectionist_heuristics = { "app/*.rb": {"alternate": "spec/{}_spec.rb"}, "spec/*_spec.rb": {"alternate": "app/{}.rb"} }
+
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
+
+nnoremap :q :qa
