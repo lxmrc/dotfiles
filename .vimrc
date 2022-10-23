@@ -201,7 +201,7 @@ let g:rspec_command = 'call Send_to_Tmux("docker-compose exec web bundle exec rs
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>n :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>
 
 " Vimwiki
 let g:vimwiki_hl_headers = 1
