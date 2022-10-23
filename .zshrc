@@ -326,7 +326,8 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 
 alias rgl="rg -l"
 
-alias gcg="vim -n ${HOME}/.gitconfig"
+alias ggc="vim -n ${HOME}/.gitconfig"
+alias ggi="vim -n ${HOME}/.gitignore"
 
 alias wpr="gh pr list --state merged --search "
 alias mpr="gh pr list --state merged"
@@ -350,3 +351,5 @@ elif [ "$THEME" = "dark" ]
 then
   tmux source-file "${HOME}/code/tmux-powerline-light/green-dark.tmuxtheme"
 fi
+
+alias p="ping 8.8.8.8"

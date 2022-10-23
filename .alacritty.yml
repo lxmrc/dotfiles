@@ -824,30 +824,30 @@ shell:
   #     white: "#ffffff"
   # theme: Tomorrow.light
 colors:
-  # Default colors
+  name: Monokai (dark)
+  author: Chris Kempson
   primary:
-    background: '#2E3440'
-    foreground: '#D8DEE9'
-
-  # Normal colors
+    background: "#272822"
+    foreground: "#f8f8f2"
+  cursor:
+    text: "#272822"
+    cursor: "#f8f8f2"
   normal:
-    black: '#3B4252'
-    red: '#BF616A'
-    green: '#A3BE8C'
-    yellow: '#EBCB8B'
-    blue: '#81A1C1'
-    magenta: '#B48EAD'
-    cyan: '#88C0D0'
-    white: '#E5E9F0'
-
-  # Bright colors
+    black: "#272822"
+    red: "#f92672"
+    green: "#a6e22e"
+    yellow: "#f4bf75"
+    blue: "#66d9ef"
+    magenta: "#ae81ff"
+    cyan: "#a1efe4"
+    white: "#f8f8f2"
   bright:
-    black: '#4C566A'
-    red: '#BF616A'
-    green: '#A3BE8C'
-    yellow: '#EBCB8B'
-    blue: '#81A1C1'
-    magenta: '#B48EAD'
-    cyan: '#8FBCBB'
-    white: '#ECEFF4'
-theme: Nord
+    black: "#75715e"
+    red: "#f92672"
+    green: "#a6e22e"
+    yellow: "#f4bf75"
+    blue: "#66d9ef"
+    magenta: "#ae81ff"
+    cyan: "#a1efe4"
+    white: "#f9f8f5"
+theme: Monokai.dark
