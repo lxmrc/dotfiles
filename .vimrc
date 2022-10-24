@@ -81,12 +81,6 @@ nnoremap <leader>ri :RunInInteractiveShell<space>
 " Color scheme
 colorscheme default
 
-" Highlight colours
-hi Folded ctermfg=102 guifg=#878787 guibg=NONE ctermbg=NONE
-highlight clear SignColumn
-highlight ALEError ctermbg=none cterm=underline 
-highlight ALEWarning ctermbg=none cterm=underline
-
 " Use an undo file
 set undofile
 set undodir=$HOME/.vimundo/
@@ -149,6 +143,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'mattn/vim-gist'
 Plug 'mattn/webapi-vim'
 Plug 'mtth/scratch.vim'
+Plug 'peterrincker/vim-argumentative'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier'
@@ -172,6 +167,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
+Plug 'idanarye/vim-merginal'
 call plug#end()
 
 " ALE
@@ -264,3 +260,12 @@ function! Quit()
     endif
     quit
 endfunction
+
+" Highlight colours
+hi Folded ctermfg=102 guifg=#878787 guibg=NONE ctermbg=NONE
+highlight clear SignColumn
+highlight ALEError ctermbg=none cterm=underline 
+highlight ALEWarning ctermbg=none cterm=underline
+
+" Hide remote branches in vim-merginal
+let g:merginal_remoteVisible=0
