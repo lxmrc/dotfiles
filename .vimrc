@@ -159,6 +159,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
@@ -229,7 +230,7 @@ nnoremap <space>G :Gedit : <CR>
 nnoremap <space>gw :Git blame<CR>
 nnoremap <space>gmm :Git merge master<CR>
 nnoremap <space>gcm :Git checkout master<CR>
-nnoremap <space>gb :Git branch -a \| only<CR>
+nnoremap <space>gb :Merginal<CR>
 nnoremap <space>gc :Git checkout<Space>
 nnoremap <space>gf :Git fetch-checkout<Space>
 nnoremap <space>gdn :Git diff --name-only master \| only<CR>
@@ -252,8 +253,7 @@ highlight GitGutterChangeDelete ctermfg=4
 let g:rooter_manual_only = 0
 
 " Quit whether Goyo is active or not
-ca wq :w<cr>:call Quit()<cr>
-ca q :call Quit()<cr>
+ca qa :call Quit()<cr>
 function! Quit()
     if exists('#goyo')
         Goyo
