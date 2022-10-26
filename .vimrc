@@ -233,6 +233,7 @@ nnoremap <space>gcm :Git checkout master<CR>
 nnoremap <space>gb :Merginal<CR>
 nnoremap <space>gc :Git checkout<Space>
 nnoremap <space>gf :Git fetch-checkout<Space>
+nnoremap <space>gd :Git diff \| only<CR>
 nnoremap <space>gdn :Git diff --name-only master \| only<CR>
 nnoremap <space>gdm :Git diff master \| only<CR>
 nnoremap <space>gps :Dispatch! git push<CR>
