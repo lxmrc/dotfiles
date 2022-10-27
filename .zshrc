@@ -269,8 +269,8 @@ alias dcf="docker-compose exec web bundle exec rspec --fail-fast"
 alias dcc="docker-compose exec web rails console"
 alias dce="docker-compose exec"
 alias dcew="docker-compose exec web"
-alias dcp="docker attach eagle-dev-local-web-1"
-alias dcpw="docker attach eagle-dev-local-workers-1"
+alias dcp="docker attach eagle-dev-local_web_1"
+alias dcpw="docker attach eagle-dev-local_workers_1"
 
 # apt
 alias ai="sudo apt install -y"
@@ -351,5 +351,3 @@ elif [ "$THEME" = "dark" ]
 then
   tmux source-file "${HOME}/code/tmux-powerline-light/green-dark.tmuxtheme"
 fi
-
-alias p="ping 8.8.8.8"
