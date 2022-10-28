@@ -211,7 +211,7 @@ let g:vimwiki_hl_headers = 1
 
   " work
   let work = {}
-  let work.path = '~/work/eagle-dev-local/eagle/wiki/'
+  let work.path = '~/work/eagle-dev-local/eagle/eagle-wiki/'
   let work.ext = '.md'
 
 let g:vimwiki_list = [personal, work]

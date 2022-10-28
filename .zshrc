@@ -147,6 +147,7 @@ alias st="tmux source ${HOME}/.tmux.conf"
 # vim
 alias v="vim -n "
 alias vw="vim -nc 'Goyo | VimwikiIndex'"
+alias vww="vim -nc 'Goyo | VimwikiIndex 2'"
 alias vwd="vim -nc VimwikiDiaryIndex"
 alias vc="vim -n ${HOME}/.vimrc" 
 alias vg="vim -c 'Gedit :'" 
@@ -324,6 +325,9 @@ alias kgs="sudo killall -3 gnome-shell"
 # sync dot files
 alias sdf="git -C ${HOME}/code/dotfiles add . && git -C ${HOME}/code/dotfiles commit -m 'Update dotfiles' && git -C ${HOME}/code/dotfiles push"
 
+# sync personal wiki
+alias spw="git -C ${HOME}/wiki pull && git -C ${HOME}/wiki add . && git -C ${HOME}/wiki commit -m 'Update wiki' && git -C ${HOME}/wiki push"
+
 export DENO_INSTALL="/home/alex/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
@@ -354,3 +358,6 @@ elif [ "$THEME" = "dark" ]
 then
   tmux source-file "${HOME}/code/tmux-powerline-light/green-dark.tmuxtheme"
 fi
+
+alias eagle="${HOME}/work/eagle-dev-local/eagle"
+alias workwiki="${HOME}/work/eagle-dev-local/eagle/wiki"
