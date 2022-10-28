@@ -270,3 +270,29 @@ highlight ALEWarning ctermbg=none cterm=underline
 
 " Hide remote branches in vim-merginal
 let g:merginal_remoteVisible=0
+
+" gutentags 
+let g:gutentags_enabled_dirs = ["${HOME}/work/eagle-dev-local/eagle"]
+let g:gutentags_enabled_user_func = 'CheckEnabledDirs'
+
+function! CheckEnabledDirs(file)
+    let file_path = fnamemodify(a:file, ':p:h')
+
+    try
+        let gutentags_root = gutentags#get_project_root(file_path)
+        if filereadable(gutentags_root . '/tags')
+            return 1
+        endif
+    catch
+    endtry
+
+    for enabled_dir in g:gutentags_enabled_dirs
+        let enabled_path = fnamemodify(enabled_dir, ':p:h')
+
+        if match(file_path, enabled_path) == 0
+            return 1
+        endif
+    endfor
+
+    return 0
+endfunction

@@ -284,8 +284,11 @@ alias di="sudo dpkg -i "
 # .clear
 alias .clear=clear
 
-# copy last command
+# Copy last command
 alias clc="fc -ln -1 | tr -d '\n' | xclip -sel c"
+
+# Pipe to clipboard
+alias x=" tr -d '\n' | xclip -sel c"
 
 # Clear ~/.vim/view/
 alias rmv="rm -rf ${HOME}/.vim/view/"
